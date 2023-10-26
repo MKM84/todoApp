@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+.main-container {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    margin: 50px 0px ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Todo form  */
+.todo-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-add {
+    flex: 3;
+    border: solid 1px #cccccc;
+    height: 40px;
+    padding-left: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-add {
+    flex: 1;
+    height: 44px;
+    background-color: #e5e5e5;
+    border: solid 1px #c4c4c4;
+    padding: 8px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add:hover {
+    background-color: #c9c9c9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Todo list  */
+.todo-list {
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px #eaeaea;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.item-validated {
+    background-color: #f1f1f1;
+}
+
+.action-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Checkbox  */
+.checkbox-wrapper *,
+.checkbox-wrapper *::before,
+.checkbox-wrapper *::after {
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.checkbox-wrapper label {
+    display: block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper input:checked~.checkbox {
+    transform: rotate(45deg);
+    width: 14px;
+    margin-left: 12px;
+    border-color: #24c78e;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 0;
+}
+
+.checkbox-wrapper .checkbox {
+    display: block;
+    width: inherit;
+    height: inherit;
+    border: 2px solid #c4c4c4;
+    transition: all 0.375s;
+}
+
+/* Delete button  */
+.delete-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+}
+
+svg {
+    color: rgb(231, 50, 50);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+
+.delete-button:focus svg {
+    opacity: 0;
+    transition: .3s;
 }
